@@ -1,23 +1,39 @@
 <template>
   <div>
-    <form action="">
+    <form v-on:submit.prevent="submitForm"> 
       <div>
         <label for="username">ID : </label>
-        <input id="username" type="text">
+        <input id="username" type="text" v-model="username">
       </div>
        <div>
         <label for="password">PW : </label>
-        <input id="password" type="password">
+        <input id="password" type="password" v-model="password">
       </div>
-      <button>로그인</button>
+      <button type="submit">로그인</button>
     </form>
   </div>
 </template>
 
 <script>
 export default {
-
-}
+    data() {
+      return {
+        username: '',
+        password: '',
+      };
+    },
+    methods: {
+      submitForm(event) {
+        // event.preventDefault(); form->submit.prevent로 사용 가능
+        console.log('로그인');
+        this.initForm();
+      },
+      initForm() {
+        this.username = "";
+        this.password = "";
+      }
+    },
+  };
 </script>
 
 <style>
