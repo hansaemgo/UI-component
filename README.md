@@ -4,3 +4,6 @@
 ## 01. Vue.js 
     - Vue.js script : develpment version 사용 ( production version : 배포용)
     - MVVM
+
+## 02. Vue.js 특징
+    - 컴포넌트 기반, MVVM패턴, 리액트와 앵귤러의 장점흡수
