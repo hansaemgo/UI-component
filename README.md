@@ -3,3 +3,4 @@
 
 ## 01. Vue.js 
     - Vue.js script : develpment version 사용 ( production version : 배포용)
+    - MVVM
