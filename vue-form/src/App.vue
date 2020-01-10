@@ -17,13 +17,15 @@
       </div>
       <button v-bind:disabled="!isUsernameValid" type="submit" >로그인</button>
     </form>
-    <p v-if="isError">올바르지 않은 ID입니다.</p>
-    <p v-if="isUsernameValid">이메일 형식이 맞습니다.</p>
-
+    <p v-if="isSuccess">로그인이 되었습니다.</p>
+    <!-- <p v-if="isError">올바르지 않은 ID입니다.</p>
+    <p v-if="isUsernameValid">이메일 형식이 맞습니다.</p> -->
+    <ToastPopup v-bind:open="isSuccess"></ToastPopup>
   </div>
 </template>
 
 <script>
+import ToastPopup from '@/components/ToastPopup.vue';
 
 // 이메일 형식 체크 함수
 function validateEmail(email) {
@@ -32,6 +34,9 @@ function validateEmail(email) {
 }
 
 export default {
+  components: {
+    ToastPopup
+  },
     data() {
       return {
         username: '',
@@ -73,5 +78,11 @@ export default {
   }
   .username-input.error{
     border : 1px solid red;
+  }
+  input{
+    margin-bottom: 10px;
+  }
+  button{
+    margin-bottom: 20px;
   }
 </style>
