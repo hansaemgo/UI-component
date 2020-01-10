@@ -36,7 +36,8 @@ export default {
       return {
         username: '',
         password: '',
-        isError : false
+        isError : false,
+        isSuccess : false,
       };
     },
     computed: {
@@ -54,7 +55,8 @@ export default {
         //   .catch(error => {
         //     this.isError = true;
         //   });
-        this.isError = true;
+        // this.isError = false;
+        this.isSuccess = true;
         //this.initForm();
       },
       initForm() {
